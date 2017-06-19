@@ -19,21 +19,45 @@ public class Calculator {
      * テストの練習のため，わかりにくいコードにしてある．
      * @return a, b, cの最大値
      */
+    
     public int max(int a, int b, int c) {
         int x;
         if (a > b) {
-            if (b > c) {
+            if (b > c) {//a > b > c
                 x = a;
-            } else {
+            } else if(a > c){//a > c > b
+                x = a;
+            }else{//c > a > b
                 x = c;
-            }
-        } else {
-            if (b > c) {
+            }   
+        } else {//b > a
+            if (b > c) {//b > a,b > c 絶対bが大きい
                 x = b;
-            } else {
+            } else {//c > b > a
                 x = c;
             }
         }
         return x;
     }
+   
+    /*
+        //short version
+        public int max(int a, int b, int c) {
+        int x = a;
+        if (a > b) {
+            if(c > a){//c > a > b
+                x = c;
+            }
+        } else {//b > a
+            if (b > c) {//b > a,b > c 絶対bが大きい
+                x = b;
+            } else {//c > b > a
+                x = c;
+            }
+        }
+        return x;
+        
+        }
+        */
+
 }
